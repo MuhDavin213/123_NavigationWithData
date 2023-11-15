@@ -41,7 +41,6 @@ class OrderViewModel : ViewModel() {
     }
     fun setContent(listData : MutableList<String>){
         _stateUI.value = OrderUIState(
-
         )
     }
 }
