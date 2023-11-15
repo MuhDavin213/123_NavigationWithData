@@ -10,7 +10,7 @@ import java.lang.NumberFormatException
 import java.text.NumberFormat
 
 
-private const val HARGA_PER_CUP = 3000
+private const val HARGA_PER_CUP = 30000
 class OrderViewModel : ViewModel() {
     private val _stateUI = MutableStateFlow(OrderUIState())
     val stateUI:StateFlow<OrderUIState> = _stateUI.asStateFlow()
@@ -36,7 +36,7 @@ class OrderViewModel : ViewModel() {
     private fun hitungHarga(
         jumlah: Int = _stateUI.value.jumlah,
     ): String{
-        val kalkulasiHarga = jumlah + HARGA_PER_CUP
+        val kalkulasiHarga = jumlah * HARGA_PER_CUP
         return NumberFormat.getNumberInstance().format(kalkulasiHarga)
     }
 }

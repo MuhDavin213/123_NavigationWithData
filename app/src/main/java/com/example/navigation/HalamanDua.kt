@@ -55,22 +55,17 @@ fun HalamanDua(
                 .weight(1f, false)
                 .padding(dimensionResource(R.dimen.padding_medium))
         ){
-            Column (
-                verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
-            ){
              Button(
                  modifier = Modifier.fillMaxWidth(),
                  onClick = {}
              ) {
+                 Text(stringResource(R.string.send))}
                  OutlinedButton(
                      modifier = Modifier.fillMaxWidth(),
-                     onClick = {}
+                     onClick = {onCancelButtonClicked}
                  ) {
                      Text(stringResource(R.string.cancel))
                  }
-             }   
-            }
-            
-        }
+             }
     }
 }

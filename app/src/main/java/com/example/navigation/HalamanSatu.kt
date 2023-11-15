@@ -62,6 +62,7 @@ fun HalamanSatu(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     RadioButton(selected = rasaYgDipilih == item, onClick = {
+                        rasaYgDipilih = item
                         onSelectionChanged(item)
                     }
                     )
@@ -78,14 +79,14 @@ fun HalamanSatu(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(dimensionResource(R.dimen.padding_medium))
-                    .weight(1f, false),
+                    .weight(1f),
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
             ) {
                 OutlinedTextField(value = textJmlBeli,
                     singleLine = true,
                     shape = MaterialTheme.shapes.large,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                    modifier = Modifier.width(150.dp),
+                    modifier = Modifier.weight(1f),
                     label = { Text(text = "Jumlah Order") },
                     onValueChange = {
                         textJmlBeli = it
@@ -117,6 +118,7 @@ fun HalamanSatu(
                     modifier = Modifier.weight(1f),
                     onClick = onCancelButtonClicked
                 ) {
+                    Text(stringResource(R.string.cancel))
                 }
                 Button(
                     modifier = Modifier.weight(1f),

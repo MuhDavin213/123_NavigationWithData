@@ -35,7 +35,7 @@ import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 fun HalamanHome(
     onNextButtonClicked: () -> Unit
 ) {
-    val image = painterResource(id = R.drawable.esteh2)
+    val image = painterResource(id = R.drawable.esteh4)
     Column(
         modifier = Modifier,
         verticalArrangement = Arrangement.SpaceBetween
@@ -61,7 +61,7 @@ fun HalamanHome(
                 contentScale = ContentScale.Crop
             )
             Text(
-                text = "es Teh",
+                text = "Selamat Menikmati",
                 color = Color.DarkGray,
                 fontFamily = FontFamily.Cursive,
                 fontStyle = FontStyle.Italic,
@@ -76,6 +76,7 @@ fun HalamanHome(
             .padding(dimensionResource(R.dimen.padding_medium))
             .weight(1f, false),
         horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+        verticalAlignment = Alignment.Bottom
     ) {
         Button(
             modifier = Modifier.weight(1f),

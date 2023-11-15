@@ -7,6 +7,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -46,15 +47,16 @@ fun EsJumboAppBar(
         modifier = modifier,
         navigationIcon = {
             if (bisaNavigasiBack) {
-                Icon(
-                    imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(R.string.back_button)
-                )
+                IconButton(onClick = navigasiUp) {
+                    Icon(
+                        imageVector = Icons.Filled.ArrowBack,
+                        contentDescription = stringResource(R.string.back_button)
+                    )
+                }
             }
-        }
-    )
+        })
 }
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EsJumboApp(
     viewModel: OrderViewModel = viewModel(),
@@ -81,6 +83,8 @@ fun EsJumboApp(
                     onNextButtonClicked = {
                         navController.navigate(PengelolaHalaman.Rasa.name)
                     })
+            }
+            composable(route = PengelolaHalaman.Rasa.name){
                 val context = LocalContext.current
                 HalamanSatu(
                     pilihanRasa = flavors.map { id ->
@@ -103,7 +107,7 @@ fun EsJumboApp(
             composable(route = PengelolaHalaman.Summary.name) {
                 HalamanDua(
                     orderUIState = uiState,
-                    onCancelButtonClicked = { cancelOrderAndNavigateToRasa(navController) })
+                    onCancelButtonClicked = { cancelOrderAndNavigateToRasa(navController) },)
             }
         }
     }
