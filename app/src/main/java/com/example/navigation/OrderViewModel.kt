@@ -39,4 +39,9 @@ class OrderViewModel : ViewModel() {
         val kalkulasiHarga = jumlah * HARGA_PER_CUP
         return NumberFormat.getNumberInstance().format(kalkulasiHarga)
     }
+    fun setContent(listData : MutableList<String>){
+        _stateUI.value = OrderUIState(
+
+        )
+    }
 }
