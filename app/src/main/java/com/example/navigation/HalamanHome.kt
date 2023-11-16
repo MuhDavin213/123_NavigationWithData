@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -60,12 +61,20 @@ fun HalamanHome(
                 contentDescription = null,
                 contentScale = ContentScale.Crop
             )
+                Column (
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                ){
+                    Text(
+                        text = "Es Teh Tawar"
+                    )
+                }
             Text(
-                text = "Selamat Menikmati",
+                text = "Es Teh Jokowi",
                 color = Color.DarkGray,
-                fontFamily = FontFamily.Cursive,
+                fontFamily = FontFamily.Serif,
                 fontStyle = FontStyle.Italic,
-                fontSize = 60.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold
             )
         }

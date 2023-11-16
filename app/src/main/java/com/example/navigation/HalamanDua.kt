@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.OutlinedButton
@@ -60,17 +61,20 @@ fun HalamanDua(
                 .weight(1f, false)
                 .padding(dimensionResource(R.dimen.padding_medium))
         ){
-             Button(
-                 modifier = Modifier.fillMaxWidth(),
-                 onClick = {}
-             ) {
-                 Text(stringResource(R.string.send))}
-                 OutlinedButton(
-                     modifier = Modifier.fillMaxWidth(),
-                     onClick = {onCancelButtonClicked}
-                 ) {
-                     Text(stringResource(R.string.cancel))
-                 }
-             }
+            Column (verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))){
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = {}
+                ) {
+                    Text(stringResource(R.string.send))}
+                OutlinedButton(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onCancelButtonClicked,
+                ) {
+                    Text(stringResource(R.string.cancel))
+                }
+            }
+
+        }
     }
 }
