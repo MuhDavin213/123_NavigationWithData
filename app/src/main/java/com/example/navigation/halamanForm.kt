@@ -25,7 +25,8 @@ import androidx.compose.ui.unit.sp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HalamanBaru(
-  goToNextPage: (MutableList<String>) -> Unit,
+  halamanBerikutnya: (MutableList<String>) -> Unit,
+  halamanSebelumnya: (MutableList<String>) -> Unit,
 ){
     var namaTxt by remember {
         mutableStateOf("")
@@ -76,12 +77,20 @@ fun HalamanBaru(
         )
 
         Button(
-            onClick = { goToNextPage(listData) },
+            onClick = { halamanBerikutnya(listData) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(30.dp)
         ) {
             Text(text = "Next")
+
+        }
+        Button(onClick = {halamanSebelumnya(listData)},
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(30.dp)
+        ) {
+            Text(text = "Back")
 
         }
 
