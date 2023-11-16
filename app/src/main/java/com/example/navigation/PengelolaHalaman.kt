@@ -19,9 +19,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -30,6 +28,7 @@ import com.example.navigation.data.SumberData.flavors
 
 enum class PengelolaHalaman {
     Home,
+    form,
     Rasa,
     Summary
 }
@@ -82,6 +81,17 @@ fun EsJumboApp(
                 HalamanHome(
                     onNextButtonClicked = {
                         navController.navigate(PengelolaHalaman.Rasa.name)
+                    })
+            }
+            composable(route = PengelolaHalaman.form.name){
+                HalamanBaru(
+                    halamanBerikutnya = {
+                        viewModel.setContent(it)
+                        navController.navigate(PengelolaHalaman.Rasa.name)
+                    },
+                    halamanSebelumnya = {
+                        viewModel.setContent(it)
+                        navController.navigate(PengelolaHalaman.Home.name)
                     })
             }
             composable(route = PengelolaHalaman.Rasa.name){

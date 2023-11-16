@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import java.lang.NumberFormatException
 import java.text.NumberFormat
 
 
@@ -39,7 +38,7 @@ class OrderViewModel : ViewModel() {
         val kalkulasiHarga = jumlah * HARGA_PER_CUP
         return NumberFormat.getNumberInstance().format(kalkulasiHarga)
     }
-    fun setContent(listData : MutableList<String>){
+    fun setContent(listData: MutableList<String>){
         _stateUI.value = OrderUIState(
             nama = listData[0],
             notlp = listData[1],
