@@ -75,5 +75,15 @@ fun HalamanBaru(
             label = { Text(text = "Alamat")}
         )
 
+        Button(
+            onClick = { goToNextPage(listData) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(30.dp)
+        ) {
+            Text(text = "Next")
+
+        }
+
     }
 }
