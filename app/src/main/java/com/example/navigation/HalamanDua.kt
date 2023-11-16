@@ -27,13 +27,18 @@ fun HalamanDua(
     modifier: Modifier = Modifier
 ){
     val items = listOf(
+        Pair(stringResource(R.string.nama), orderUIState.nama),
+        Pair(stringResource(R.string.no_telp), orderUIState.notlp),
+        Pair(stringResource(R.string.alamat), orderUIState.alamat),
         Pair(stringResource(R.string.quantity), orderUIState.jumlah),
-        Pair(stringResource(R.string.flavor), orderUIState.rasa)
+        Pair(stringResource(R.string.flavor), orderUIState.rasa),
+
     )
     Column (
         modifier = modifier,
         verticalArrangement = Arrangement.SpaceBetween
     ){
+
         Column (
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
