@@ -1,5 +1,6 @@
 package com.example.navigation
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -21,4 +22,10 @@ fun HalamanBaru(
     }
     val listData = mutableListOf<String>(namaTxt,telpTxt,alamatTxt)
 
+
+    Column (
+
+    ){
+
+    }
 }
